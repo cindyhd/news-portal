@@ -1,0 +1,134 @@
+<div class="card">
+    <div class="card-header bg-warning text-white">
+        <strong>News Details</strong>
+        <button type="button" class="btn btn-primary btn-sm" (click)="onAddNews()" style="float: right;">
+        Add News
+        </button>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;"> Post Id</th>
+                            <th style="text-align: center;">Title</th>
+                            <th style="text-align: center;">Content</th>
+                            <th style="text-align: center;">Image</th>
+                            <th style="text-align: center;">Category</th>
+                            <th style="text-align: center;">Publish Date</th>
+                            <th style="text-align: center;">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox">
+                            </td> -->
+                            <td>1</td>
+                            <td>covid</td>
+                            <td>covid is.....</td>
+                            <td>.img</td>
+                            <td>health</td>
+                            <td>3 mar 2023</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-warning">Edit</button>&nbsp;
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox">
+                            </td> -->
+                            <td>2</td>
+                            <td>Badminton</td>
+                            <td>Badminton is one of a favorite.....</td>
+                            <td>.img</td>
+                            <td>Sport</td>
+                            <td>3 mar 2023</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-warning">Edit</button>&nbsp;
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--The Modal-->
+<div class="modal" id="newsModel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--Modal Header-->
+            <div class="modal-header bg-success text-white">
+                <h6 class="modal-title">Add News Details</h6>
+                <button type="button" class="ctn-close btn-sm text-white" (click)="onCloseModel"></button>
+            </div>
+            <form #userForm="ngForm">
+                <!--Modal Body-->
+                <div class="modal-body">
+
+                    <!-- <div class="row">
+                        <div class="col-md-8">
+                            <label class="for-label">Post Id</label>
+                            <input type="text" name="postId" class="form-control" [(ngModel)]="news.postId"
+                            placeholder="Post Id">
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label class="for-label">Title</label>
+                            <input type="text" name="title" class="form-control" [(ngModel)]="news.title"
+                            placeholder="Title">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label class="for-label">Content</label>
+                            <input type="text" name="content" class="form-control" [(ngModel)]="news.content"
+                            placeholder="Content">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label class="for-label">Image</label>
+                            <input type="image" name="image" class="form-control" [(ngModel)]="news.image"
+                            placeholder="Image">
+                            <!-- <input type="file" style="display: inline-block;" (change)="incomingfile($event.target.files)"
+                            placeholder="Upload file" accept=".jpg,.jpeg,.bmp,.png"> -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label class="for-label">Category</label>
+                            <input type="text" name="category" class="form-control" [(ngModel)]="news.category"
+                            placeholder="Category">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label class="for-label">Publish Date</label>
+                            <input type="date" name="publishDate" class="form-control" [(ngModel)]="news.publishDate"
+                            placeholder="Publish Date">
+                            <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2040" 
+                            [(ngModel)]="news.publishDate" [ngModelOptions]="{standalone: true}" dateFormat="dd/mm/yy" 
+                            [showIcon]="true"></p-calendar>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
