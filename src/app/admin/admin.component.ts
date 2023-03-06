@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PrimeNGModule } from '../shared/prime-ng.module';
 
 @Component({
   selector: 'app-admin',
@@ -16,23 +18,26 @@ export class AdminComponent implements OnInit {
     publishDate: Date
   }
 
-  constructor() { }
+  constructor(
+    public router: Router,
+    public activeRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
   }
 
   onAddNews(){
-    const notNull = document.getElementById('newsModel');
-    if (notNull != null) {
-      notNull.style.display = 'block';
-    }
+    // const notNull = document.getElementById('newsModel');
+    // if (notNull != null) {
+    //   notNull.style.display = 'block';
+    // }
+    const formParams = new Map();
+    formParams.set('mode', 'add')
+    this.navigateTo('posting-news', formParams);
   }
 
-  onCloseModel(){
-    const notNull = document.getElementById('newsModel');
-    if (notNull != null) {
-      notNull.style.display = 'none';
-    }
+  navigateTo(url: string, data: any) {
+    this.router.navigateByUrl(url, { state: { data } });
   }
 
   incomingfile(files: FileList) {

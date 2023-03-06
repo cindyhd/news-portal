@@ -1,0 +1,48 @@
+<div class="content">
+    <div class="p-col">
+        <p-panel>
+            <form [formGroup]="postingNews">
+                <div class="ui-fluid">
+                    <div class="ui-g">
+                        <div class="ui-g-12">
+                            <div class="ui-g-2">
+                                Title
+                            </div>
+                            <div class="ui-g-2">
+                                <input id="input" type="text" size="30" pInputText formControlName="title"
+                                    maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="ui-g-12">
+                            <div class="ui-g-2">
+                                Category
+                            </div>
+                            <div class="ui-g-4">
+                                <input id="input" type="text" size="30" pInputText formControlName="category"
+                                    oninput="this.value = this.value.toUpperCase()" />
+                            </div>
+                        </div>
+                        <div>
+                            <div class="ui-g-12">
+                                <div class="ui-g-2">
+                                    Content
+                                </div>
+                            </div>
+                            <div class="ui-g-12">
+                                <div class="ui-g-4">
+                                    <textarea rows="5" cols="60" pInputTextarea [autoResize]="true"
+                                    id="input" type="text" formControlName="content"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="p-grid" style="margin-top:10px">
+                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12" style="text-align: right">
+                    <button type="button" class="btn btn-success">Save</button>&nbsp;
+                </div>
+              </div>
+        </p-panel>
+    </div>
+</div>
