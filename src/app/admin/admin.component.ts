@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PrimeNGModule } from '../shared/prime-ng.module';
 
 @Component({
   selector: 'app-admin',
@@ -8,15 +7,15 @@ import { PrimeNGModule } from '../shared/prime-ng.module';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  newsArray: any [] = [];
-  news: any = {
-    postId: 0,
-    title: '',
-    content:  '',
-    image: '',
-    category: '',
-    publishDate: Date
-  }
+  newsArr: any [] = [];
+  // news: any = {
+  //   postId: 0,
+  //   title: '',
+  //   content:  '',
+  //   image: '',
+  //   category: '',
+  //   publishDate: Date
+  // }
 
   constructor(
     public router: Router,
@@ -24,6 +23,14 @@ export class AdminComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData(){
+    const localData = localStorage.getItem('newsData');
+    if (localData != null) {
+      this.newsArr = JSON.parse(localData);
+    }
   }
 
   onAddNews(){
@@ -38,6 +45,14 @@ export class AdminComponent implements OnInit {
 
   navigateTo(url: string, data: any) {
     this.router.navigateByUrl(url, { state: { data } });
+  }
+
+  edit(id: number) {
+
+  }
+
+  delete(id: number) {
+
   }
 
   incomingfile(files: FileList) {

@@ -1,48 +1,46 @@
-<div class="content">
+<div class="container-fluid" style="margin-bottom: 20px;">
     <div class="p-col">
         <p-panel>
-            <form [formGroup]="postingNews">
-                <div class="ui-fluid">
-                    <div class="ui-g">
-                        <div class="ui-g-12">
-                            <div class="ui-g-2">
+            <form [formGroup]="newsForm">
+                <div class="ui-fluid" style="margin-top: 15px;">
+                    <div class="ui-g" >
+                        <div class="ui-g-12" style="margin: 10px">
+                            <div class="ui-g-4" >
                                 Title
                             </div>
-                            <div class="ui-g-2">
+                            <div class="ui-g-4" style="padding-top: 5px;">
                                 <input id="input" type="text" size="30" pInputText formControlName="title"
-                                    maxlength="50" />
+                                    maxlength="50" class="form-control" />
                             </div>
                         </div>
-                        <div class="ui-g-12">
-                            <div class="ui-g-2">
+                        <div class="ui-g-12" style="margin: 10px">
+                            <div class="ui-g-4">
                                 Category
                             </div>
-                            <div class="ui-g-4">
+                            <div class="ui-g-4" style="padding-top: 5px;">
                                 <input id="input" type="text" size="30" pInputText formControlName="category"
-                                    oninput="this.value = this.value.toUpperCase()" />
+                                    maxlength="10" class="form-control" />
                             </div>
                         </div>
-                        <div>
-                            <div class="ui-g-12">
-                                <div class="ui-g-2">
-                                    Content
-                                </div>
+                        <div class="ui-g-12" style="margin: 10px">
+                            <div class="ui-g-4">
+                                Content
                             </div>
-                            <div class="ui-g-12">
-                                <div class="ui-g-4">
-                                    <textarea rows="5" cols="60" pInputTextarea [autoResize]="true"
-                                    id="input" type="text" formControlName="content"></textarea>
-                                </div>
+                            <div class="ui-g-4" style="padding-top: 5px;">
+                                <textarea rows="5" cols="50" pInputTextarea [autoResize]="true"
+                                id="input" type="text" formControlName="content" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
-            <div class="p-grid" style="margin-top:10px">
-                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12" style="text-align: right">
-                    <button type="button" class="btn btn-success">Save</button>&nbsp;
+            <div class="p-grid" style="margin-top:20px">
+                <div class="col-md-12" style="text-align: right;">
+                    <button type="button" class="btn btn-success" icon="pi pi-save" (click)="save()">Save</button>&nbsp;
+                    <button type="button" class="btn btn-warning">Cancel</button>&nbsp;
+                    <button type="button" class="btn btn-primary">Exit</button>&nbsp;
                 </div>
-              </div>
+            </div>
         </p-panel>
     </div>
 </div>

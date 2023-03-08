@@ -7,18 +7,34 @@ import { FormControl, FormGroup, Validators,  } from '@angular/forms';
   styleUrls: ['./posting-news.component.css']
 })
 export class PostingNewsComponent implements OnInit {
-  postingNews = new FormGroup({
-    title: new FormControl({ value: '', disabled: false },Validators.compose([Validators.required, Validators.maxLength(50)])),
-    category: new FormControl({ value: '', disabled: false }, Validators.required),
-    content: new FormControl({ value: '', disabled: false }, Validators.required),
-  });
+  // newsForm = new FormGroup({
+  //   id: new FormControl({ value: '', disabled: false }, Validators.required),
+  //   title: new FormControl({ value: '', disabled: false },Validators.compose([Validators.required, Validators.maxLength(50)])),
+  //   category: new FormControl({ value: '', disabled: false }, Validators.required),
+  //   content: new FormControl({ value: '', disabled: false }, Validators.required),
+  //   publishDate: new FormControl({ value: new Date(), disabled: false }, Validators.required),
+  // });
+  newsForm: FormGroup;
   mainParsedData: any;
   param = new Map();
 
-  constructor() { this.mainParsedData = window.history.state; }
+  constructor() {
+    this.newsForm = new FormGroup({
+      newsId: new FormControl(0),
+      title: new FormControl(""),
+      category: new FormControl(""),
+      content: new FormControl(""),
+    });
+    this.mainParsedData = window.history.state; 
+  }
 
   ngOnInit(): void {
     this.param = this.mainParsedData.data;
+    
+  }
+
+  save() {
+
   }
 
 }
