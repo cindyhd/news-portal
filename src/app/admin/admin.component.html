@@ -12,25 +12,25 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th style="text-align: center;">No.</th>
+                            <th style="text-align: center; width: 5%;">No.</th>
                             <th style="text-align: center;">Title</th>
                             <th style="text-align: center;">Content</th>
                             <!-- <th style="text-align: center;">Image</th> -->
                             <th style="text-align: center;">Category</th>
                             <!-- <th style="text-align: center;">Publish Date</th> -->
-                            <th style="text-align: center;">Action</th>
+                            <th style="text-align: center; width: 15%;">Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <ng-container *ngFor="let item of newsArr; let i = index">
                           <tr >
-                            <td>{{i+1}}</td>
+                            <td style="text-align: center;">{{i+1}}</td>
                             <td>{{item.title}}</td>
                             <td>{{item.content}}</td>
                             <td>{{item.category}}</td>
-                            <td>
-                              <button type="button" class="btn btn-warning" (click)="edit(item.newsId)">Edit</button>
+                            <td style="text-align: center;">
+                              <button type="button" class="btn btn-warning" (click)="edit(item.newsId)">Edit</button>&nbsp;
                               <button type="button" class="btn btn-danger" (click)="delete(item.newsId)">Delete</button>
                             </td>
                           </tr>

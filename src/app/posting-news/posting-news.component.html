@@ -10,7 +10,7 @@
                             </div>
                             <div class="ui-g-4" style="padding-top: 5px;">
                                 <input id="input" type="text" size="30" pInputText formControlName="title"
-                                    maxlength="50" class="form-control" />
+                                    maxlength="50" class="form-control" oninput="this.value = this.value.toUpperCase()"/>
                             </div>
                         </div>
                         <div class="ui-g-12" style="margin: 10px">
@@ -37,8 +37,8 @@
             <div class="p-grid" style="margin-top:20px">
                 <div class="col-md-12" style="text-align: right;">
                     <button type="button" class="btn btn-success" icon="pi pi-save" (click)="save()">Save</button>&nbsp;
-                    <button type="button" class="btn btn-warning">Cancel</button>&nbsp;
-                    <button type="button" class="btn btn-primary">Exit</button>&nbsp;
+                    <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>&nbsp;
+                    <button type="button" class="btn btn-primary"(click)="exit()">Exit</button>&nbsp;
                 </div>
             </div>
         </p-panel>

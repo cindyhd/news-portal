@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  newsArr: any [] = [];
+  newsArr: any[] = [];
   // news: any = {
   //   postId: 0,
   //   title: '',
@@ -48,11 +48,24 @@ export class AdminComponent implements OnInit {
   }
 
   edit(id: number) {
+    const formParams = new Map();
+    formParams.set('mode', 'edit')
+    formParams.set('id', id)
+    this.navigateTo('posting-news', formParams);
 
   }
 
   delete(id: number) {
+    const recordIndex =  this.newsArr.findIndex(m=>m.newsId == id);
+    this.newsArr.splice(recordIndex,1);
 
+    for (let index = 0; index < this.newsArr.length; index++) {
+      if (this.newsArr[index].studentId == id) {
+        this.newsArr.splice(index,1)
+      }
+    }
+
+    localStorage.setItem('newsData', JSON.stringify(this.newsArr));
   }
 
   incomingfile(files: FileList) {

@@ -5,9 +5,22 @@ import { MainComponent } from './main/main.component';
 import { PostingNewsComponent } from './posting-news/posting-news.component';
 
 const routes: Routes = [
-  { path:'main' , component: MainComponent }, 
-  { path:'admin' , component: AdminComponent },
-  { path:'posting-news' , component: PostingNewsComponent }
+  {
+    path: '',
+    component: MainComponent
+  },
+  { 
+    path:'main', 
+    component: MainComponent 
+  }, 
+  { 
+    path:'admin', 
+    component: AdminComponent 
+  },
+  { 
+    path:'posting-news',
+    component: PostingNewsComponent 
+  }
 ];
 
 @NgModule({
